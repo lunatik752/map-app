@@ -1,6 +1,7 @@
 import React from 'react';
 import {Map, YMaps} from "react-yandex-maps";
-import {SearchModule} from "../SearchModule/SearchModule";
+import {useSelector} from "react-redux";
+import { AppRootStateType } from '../../state/store';
 
 type PropsType = {
 
@@ -8,14 +9,14 @@ type PropsType = {
 
 export const MapPage = React.memo((props: PropsType) => {
 
-
+const coordinate = useSelector<AppRootStateType, Array<number>>(state => state.cityCoordinates.cityCoordinates)
+    console.log(coordinate);
 
     return (
         <div>
-            <SearchModule/>
             <YMaps>
                 <div style={{height: '100vh', width: '100%'}}>
-                    <Map defaultState={{center: [53.90, 27.56], zoom: 12}} width={'100%'} height={'100vh'}>
+                    <Map state={{center: coordinate, zoom: 12}} width={'100%'} height={'100vh'}>
                     </Map>
                 </div>
             </YMaps>
