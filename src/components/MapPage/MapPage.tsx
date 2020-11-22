@@ -22,6 +22,7 @@ debugger
                             iconCaption: school.properties.name,
                         }}/>)}
                     </Map>
+                    {schoolsItems.length}
                 </div>
             </YMaps>
         </div>
