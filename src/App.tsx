@@ -12,8 +12,6 @@ const App = () => {
             <MapPage/>
         </div>
     )
-
-
 }
 
 export default App;
