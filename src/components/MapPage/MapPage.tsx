@@ -18,8 +18,9 @@ debugger
             <YMaps>
                 <div style={{height: '100vh', width: '100%'}}>
                     <Map state={{center: coordinate, zoom: 12}} width={'100%'} height={'100vh'}>
-                        <Placemark geometry={[53.909048, 27.522972]}/>
-                        {schoolsItems.map((school) => <Placemark geometry={school.geometry.coordinates}/>)}
+                        {schoolsItems.map((school) => <Placemark  geometry={school.geometry.coordinates} properties={{
+                            iconCaption: school.properties.name,
+                        }}/>)}
                     </Map>
                 </div>
             </YMaps>
@@ -27,6 +28,6 @@ debugger
     )
 })
 
-// key={school.CompanyMetaData.id}
+// key={school.properties.CompanyMetaData.id}
 
 

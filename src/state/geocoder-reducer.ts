@@ -31,12 +31,13 @@ const initialState = {
 }
 
 export const geocodeReducer = (state: InitialStateType = initialState, action: ActionType): InitialStateType => {
-    debugger
     switch (action.type) {
         case 'GET_CITY_COORDINATES':
+            const arr = ['средняя', 'гимназия']
+            const value = new  RegExp(arr.join('|'), 'i')
             return {...state,
                 cityCoordinates: action.value,
-                schools: action.schools.map((s)  => ({...s, coordinates: s.geometry.coordinates.reverse()}))
+                schools: action.schools.filter(s => !s.properties.name.toLowerCase().match(value)).map((s)  => ({...s, coordinates: s.geometry.coordinates.reverse()}))
             }
         default :
             return state;
