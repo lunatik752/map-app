@@ -4,14 +4,15 @@ import {MapPage} from './components/MapPage/MapPage';
 import {SearchModule} from "./components/SearchModule/SearchModule";
 
 
-const App = () => {
+const App = React.memo(() => {
 
     return (
-        <div >
+
+        <div>
             <SearchModule/>
             <MapPage/>
         </div>
     )
-}
+})
 
 export default App;
