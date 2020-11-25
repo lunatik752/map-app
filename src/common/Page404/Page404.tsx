@@ -1,4 +1,4 @@
-import style from "./Page404.module.scss";
+import style from "./Page404.module.css";
 
 import React from "react";
 

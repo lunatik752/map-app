@@ -6,6 +6,8 @@ export const StartPage = React.memo(() => {
 
     return (
         <div className={style.wrapper}>
+            <h1>IT школы вашего города</h1>
+            <p>Для начала работы введите страну и город в котором вы хотите найти IT школы</p>
             <SearchModule/>
         </div>
     )

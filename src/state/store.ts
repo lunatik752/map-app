@@ -1,12 +1,12 @@
-import {applyMiddleware, combineReducers, createStore} from "redux";
+
 import thunk from "redux-thunk";
 import { geocodeReducer } from "./geocoder-reducer";
+import {applyMiddleware, combineReducers, createStore} from "redux";
 // import {searchSchoolReducer} from "./search-schools-reducer";
 
 
 const rootReducer = combineReducers({
     cityCoordinates: geocodeReducer,
-    // schoolItems: searchSchoolReducer
 })
 
 export const store = createStore(rootReducer, applyMiddleware(thunk));
