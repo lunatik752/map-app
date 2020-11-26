@@ -90,46 +90,48 @@ type InitialStateType = {
 
 const initialState: InitialStateType = {
     cityCoordinates: [53.90, 27.56],
-    schools: [
-        {
-            geometry: {
-                coordinates: [1, 2],
-                type: ''
-            },
-            properties: {
-                CompanyMetaData: {
-                    Categories: [
-                        {
-                            class: '',
-                            name: ''
-                        }
-                    ],
-                    Hours: {
-                        Availabilities: [],
-                        text: ''
-                    },
-                    Phones: [
-                        {
-                            formatted: '',
-                            type: "phone"
-                        }
-                    ],
-                    address: '',
-                    id: '',
-                    name: '',
-                    url: ''
-                },
-                boundedBy: [
-                    [1, 2],
-                    [27.523996, 53.9096525]
-                ],
-                description: '',
-                name: ''
-            },
-            type: ''
-        }
-    ]
+    schools: [] as Array<SchoolType>
 }
+
+/*schools: [
+    {
+        geometry: {
+            coordinates: [1, 2],
+            type: ''
+        },
+        properties: {
+            CompanyMetaData: {
+                Categories: [
+                    {
+                        class: '',
+                        name: ''
+                    }
+                ],
+                Hours: {
+                    Availabilities: [],
+                    text: ''
+                },
+                Phones: [
+                    {
+                        formatted: '',
+                        type: "phone"
+                    }
+                ],
+                address: '',
+                id: '',
+                name: '',
+                url: ''
+            },
+            boundedBy: [
+                [1, 2],
+                [27.523996, 53.9096525]
+            ],
+            description: '',
+            name: ''
+        },
+        type: ''
+    }
+]*/
 
 export const geocodeReducer = (state = initialState, action: ActionType): InitialStateType => {
     switch (action.type) {

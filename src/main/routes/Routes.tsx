@@ -8,7 +8,7 @@ import {MapPage} from "../../components/MapPage/MapPage";
 const Routes: React.FC = () => {
     return (
         <Switch>
-            <Route  path={'/'} render={() => <StartPage/>}/>
+            <Route exact path={'/'} render={() => <StartPage/>}/>
             <Route  path={'/mapPage'} render={() => <MapPage/>}/>
             <Route path={'*'} render={() => <Page404/>}/>
         </Switch>
